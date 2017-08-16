@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+  http://jboss.org/schema/arquillian
+  http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+  <container qualifier="tomee" default="true">
+    <configuration>
+      <property name="serverXml">conf/server.xml</property>
+
+      <!-- port = -1 means random -->
+      <property name="httpPort">-1</property>
+      <property name="stopPort">-1</property>
+
+      <!-- ssl
+      <property name="httpsPort">-1</property>
+      <property name="ssl">false</property>
+      <property name="keystoreFile">keystore-path</property>
+      <property name="keystorePass">changeit</property>
+      <property name="keystoreType">JKS</property>
+      <property name="clientAuth">false</property>
+      <property name="keyAlias">alias</property>
+      <property name="sslProtocol">protocol</property>
+-->
+      <!-- where to create TomEE files -->
+      <property name="dir">target/tomee-embedded</property>
+
+      <!-- where to dump on disk applications to deploy -->
+      <property name="appWorkingDir">target/working-dir</property>
+
+      <!-- optional - limit the port allowed when random -->
+      <property name="portRange">20001-30000</property>
+
+      <!-- container config -->
+      <property name="properties">
+        # same as embedded case
+      </property>
+
+      <!-- Deployer config -->
+      <property name="deployerProperties">
+      </property>
+    </configuration>
+  </container>
+</arquillian>
